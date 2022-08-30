@@ -28,17 +28,17 @@
                     </nav>
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="<?= base_url('front/Home')?>">Home <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="<?= base_url('front/DataGuru')?>">Data Guru</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="services.html">Courses</a>
+                            <a class="nav-link" href="<?= base_url('front/DataJurusan')?>">Jurusan</a>
                         </li>
                        
                         <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Contact</a>
+                            <a class="nav-link" href="<?= base_url('front/DataContact')?>">Contact</a>
                         </li>
                     </ul>
                 </div>

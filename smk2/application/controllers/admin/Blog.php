@@ -27,7 +27,7 @@
         {
            $judul = $this->uri->segment(4);
            $where = [
-            "judul"=> $judul
+            "judul"=> str_replace('%20',' ',$judul)
            ];
             $dataBlog['data_blog'] = $this->BlogModel->select_blog_by($where);
             $data['page']= $this->load->view('admin/pages/blog/form_edit',$dataBlog, true);
@@ -71,7 +71,7 @@
                     
                 ];
                 $where =[
-                    "judul" =>$data['judul_lama'],
+                    "judul" =>str_replace('%20',' ',$data['judul_lama'])
                 ];
         
                 //kirim data kolom ke insertdata pada masterblogmodel
@@ -96,7 +96,7 @@
                     
                 ];
                 $where =[
-                    "judul" =>$data['judul_lama'],
+                    "judul" =>str_replace('%20',' ',$data['judul_lama']),
                 ];
         
                 //kirim data kolom ke insertdata pada masterblogmodel
@@ -195,7 +195,7 @@
             //segments    1      2         3      4
             $judul = $this->uri->segment(4);
             $where = [
-                "judul"=>$judul
+                "judul"=>str_replace('%20',' ',$judul)
             ];
             if (file_exists("./images/blog/".$judul.".png")) {
                 unlink("./images/blog/".$judul.".png");

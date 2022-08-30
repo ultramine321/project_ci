@@ -55,6 +55,26 @@
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Blog</span></a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="<?= base_url('admin/Carousel')?>">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Carousel</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="<?= base_url('admin/About')?>">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>About</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="<?= base_url('admin/Contact')?>">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Contact</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="<?= base_url('admin/Pesan')?>">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Pesan</span></a>
+            </li>
             <!-- <li class="nav-item">
                 <a class="nav-link" href="index.html">
                     <i class="fas fa-fw fa-tachometer-alt"></i>

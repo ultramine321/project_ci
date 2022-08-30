@@ -27,7 +27,7 @@
         {
            $id = $this->uri->segment(4);
            $where = [
-            "id"=> $id
+            "id"=> str_replace('%20',' ',$id)
            ];
             $dataJurusan['data_jurusan'] = $this->JurusanModel->select_jurusan_by($where);
             $data['page']= $this->load->view('admin/pages/jurusan/form_edit',$dataJurusan, true);
@@ -67,7 +67,7 @@
                     "passfoto"=> $imageData['file_name']
                 ];
                 $where =[
-                    "id" =>$data['id_lama'],
+                    "id" =>str_replace('%20',' ',$data['id_lama']),
                 ];
         
                 //kirim data kolom ke insertdata pada mastersiswamodel
@@ -89,7 +89,7 @@
                     
                 ];
                 $where =[
-                    "id" =>$data['id_lama'],
+                    "id" =>str_replace('%20',' ',$data['id_lama']),
                 ];
         
                 //kirim data kolom ke insertdata pada mastersiswamodel
@@ -185,7 +185,7 @@
             //segments    1      2         3      4
             $id = $this->uri->segment(4);
             $where = [
-                "id"=>$id
+                "id"=>str_replace('%20',' ',$id)
             ];
             if (file_exists("./images/jurusan/".$id.".png")) {
                 unlink("./images/jurusan/".$id.".png");

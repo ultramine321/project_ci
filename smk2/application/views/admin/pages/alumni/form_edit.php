@@ -3,9 +3,6 @@
         <form action="<?= base_url('admin/Alumni/edit_data')?>" method="POST" enctype="multipart/form-data">
         <input type="text" class="form-control" name="nama_lama" value="<?= $data_alumni->nama?>" hidden>
             <div class="mb-3">
-                <input type="text" name="nama" value="<?= $data_alumni->nama?>" class="form-control" id="Inputnama">
-            </div>
-            <div class="mb-3">
                 <label for="Inputnama" class="form-label">nama</label>
                 <input type="text" class="form-control" name="nama" value="<?= $data_alumni->nama?>" id="Inputnama">
             </div>

@@ -15,8 +15,8 @@
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
-                        <th>id</th>
-                        <th>jurusan</th>
+                        <th>Judul</th>
+                        <th>Deskripsi</th>
                         <th>Passfoto</th>
                         <th>Aksi</th>
                     </tr>
@@ -24,12 +24,12 @@
                 <tbody>
                     <?php foreach($data as $row): ?>
                     <tr>
-                        <td><?= $row->id?></td>
-                        <td><?= $row->jurusan?></td>
-                        <td><img src="<?= base_url('images/Jurusan/'). $row->passfoto?>" alt="<?= $row->passfoto?>" width="120" height="120"></td>
+                        <td><?= $row->judul?></td>
+                        <td><?= $row->deskripsi?></td>
+                        <td><img src="<?= base_url('images/carousel/'). $row->passfoto?>" alt="<?= $row->passfoto?>" width="120" height="120"></td>
                         <td>
-                            <a href="<?= base_url('admin/Jurusan/form_edit/'). $row->id?>" class="btn btn-warning">Edit</a>
-                            <a href="<?= base_url('admin/Jurusan/hapus/'). $row->id?>" class="btn btn-danger" onclick="return confirm('Apakah Anda Yakin ingin Menghapus data?')">Hapus</a>
+                            <a href="<?= base_url('admin/Carousel/form_edit/'). $row->judul?>" class="btn btn-warning">Edit</a>
+                            <a href="<?= base_url('admin/Carousel/hapus/'). $row->judul?>" class="btn btn-danger" onclick="return confirm('Apakah Anda Yakin ingin Menghapus data?')">Hapus</a>
                         </td>
                     </tr>
                     <?php endforeach;?>

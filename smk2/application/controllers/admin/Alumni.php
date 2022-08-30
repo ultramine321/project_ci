@@ -27,7 +27,7 @@
         {
            $nama = $this->uri->segment(4);
            $where = [
-            "nama"=> $nama
+            "nama"=> str_replace('%20',' ',$nama)
            ];
             $dataAlumni['data_alumni'] = $this->AlumniModel->select_alumni_by($where);
             $data['page']= $this->load->view('admin/pages/alumni/form_edit',$dataAlumni, true);
@@ -72,7 +72,7 @@
                     
                 ];
                 $where =[
-                    "nama" =>$data['nama_lama'],
+                    "nama" =>str_replace('%20',' ',$data['nama_lama']),
                 ];
         
                 //kirim data kolom ke insertdata pada masteralumnimodel
@@ -99,7 +99,7 @@
                     
                 ];
                 $where =[
-                    "nama" =>$data['nama_lama'],
+                    "nama" =>str_replace('%20',' ',$data['nama_lama']),
                 ];
         
                 //kirim data kolom ke insertdata pada masteralumnimodel
@@ -202,7 +202,7 @@
             //segments    1      2         3      4
             $nama = $this->uri->segment(4);
             $where = [
-                "nama"=>$nama
+                "nama"=>str_replace('%20',' ',$nama)
             ];
             if (file_exists("./images/alumni/".$nama.".png")) {
                 unlink("./images/alumni/".$nama.".png");

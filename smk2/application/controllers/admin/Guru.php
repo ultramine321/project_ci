@@ -27,7 +27,7 @@
         {
            $nip = $this->uri->segment(4);
            $where = [
-            "nip"=> $nip
+            "nip"=> str_replace('%20',' ',$nip)
            ];
             $dataGuru['data_guru'] = $this->GuruModel->select_guru_by($where);
             $data['page']= $this->load->view('admin/pages/guru/form_edit',$dataGuru, true);
@@ -73,7 +73,7 @@
                     "passfoto"=> $imageData['file_name']
                 ];
                 $where =[
-                    "nip" =>$data['nip_lama'],
+                    "nip" =>str_replace('%20',' ',$data['nip_lama']),
                 ];
         
                 //kirim data kolom ke insertdata pada mastergurumodel
@@ -108,7 +108,7 @@
                     
                 ];
                 $where =[
-                    "nip" =>$data['nip_lama'],
+                    "nip" =>str_replace('%20',' ',$data['nip_lama']),
                 ];
         
                 //kirim data kolom ke insertdata pada mastergurumodel
@@ -218,7 +218,7 @@
             //segments    1      2         3      4
             $nip = $this->uri->segment(4);
             $where = [
-                "nip"=>$nip
+                "nip"=>str_replace('%20',' ',$nip)
             ];
             if (file_exists("./images/guru/".$nip.".png")) {
                 unlink("./images/guru/".$nip.".png");

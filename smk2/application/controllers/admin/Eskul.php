@@ -27,7 +27,7 @@
         {
            $id = $this->uri->segment(4);
            $where = [
-            "id"=> $id
+            "id"=> str_replace('%20',' ',$id)
            ];
             $dataEskul['data_eskul'] = $this->EskulModel->select_eskul_by($where);
             $data['page']= $this->load->view('admin/pages/eskul/form_edit',$dataEskul, true);
@@ -59,8 +59,7 @@
                 //kita ambil informasi detail dari gambar yang telah di upload
                 $imageData = $this->upload->data();
     
-                
-                // die($data);
+            
                 $column = [
                     "id"=>$data['id'],
                     "eskul"=>$data['eskul'],
@@ -68,7 +67,7 @@
                     "deskripsi"=>$data['deskripsi']
                 ];
                 $where =[
-                    "id" =>$data['id_lama'],
+                    "id" =>str_replace('%20',' ',$data['id_lama']),
                 ];
         
                 //kirim data kolom ke insertdata pada mastersiswamodel
@@ -91,7 +90,7 @@
                     
                 ];
                 $where =[
-                    "id" =>$data['id_lama'],
+                    "id" =>str_replace('%20',' ',$data['id_lama'])
                 ];
         
                 //kirim data kolom ke insertdata pada mastersiswamodel
@@ -189,7 +188,7 @@
             //segments    1      2         3      4
             $id = $this->uri->segment(4);
             $where = [
-                "id"=>$id
+                "id"=>str_replace('%20',' ',$id)
             ];
             if (file_exists("./images/eskul/".$id.".png")) {
                 unlink("./images/eskul/".$id.".png");
